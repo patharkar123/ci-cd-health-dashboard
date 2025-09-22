@@ -1,0 +1,28 @@
+# Example Terraform variables file
+# Copy this to terraform.tfvars and update with your values
+# Generated with AI assistance (Cursor)
+
+# AWS Configuration
+aws_region = "us-east-1"
+
+# Project Configuration
+project_name = "cicd-dashboard"
+environment  = "dev"
+
+# EC2 Configuration
+instance_type = "t3.micro"  # Free tier eligible
+
+# SSH Key - REQUIRED: Generate with: ssh-keygen -t rsa -b 2048 -f cicd-dashboard-key
+# Then paste the content of cicd-dashboard-key.pub here
+public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQ... your-public-key-here"
+
+# GitHub Repository URL (optional - for future git-based deployment)
+github_repo_url = "https://github.com/your-username/ci-cd-health-dashboard.git"
+
+# Security Configuration
+allowed_cidr_blocks = ["0.0.0.0/0"]  # Restrict this in production
+
+# Database Configuration (optional - currently using in-memory)
+create_rds             = false
+db_instance_class      = "db.t3.micro"
+db_allocated_storage   = 20
